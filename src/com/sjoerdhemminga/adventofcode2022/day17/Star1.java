@@ -39,7 +39,7 @@ public final class Star1 {
 
             for (int blockCount = 0; blockCount < 2022; blockCount++) {
                 ensureHeight(highestLevel + 3 + 4);
-                final Block block = new Block(initializer, highestLevel + 3);
+                final BlockStar1 block = new BlockStar1(initializer, highestLevel + 3);
 
                 //boolean firstIteration = true;
 
@@ -68,7 +68,7 @@ public final class Star1 {
         System.out.println();
     }
 
-    private void dump(final Block block) {
+    private void dump(final BlockStar1 block) {
         final StringBuilder sb = new StringBuilder();
 
         for (int i = chamber.size() - 1; i >= 0; i--) {
@@ -92,7 +92,7 @@ public final class Star1 {
         System.out.println(sb);
     }
 
-    private static char[] getBlockRow(final Block block, final int i) {
+    private static char[] getBlockRow(final BlockStar1 block, final int i) {
         if (i == block.getBottomRow()) return block.getBlock()[3];
         if (i == block.getBottomRow() + 1) return block.getBlock()[2];
         if (i == block.getBottomRow() + 2) return block.getBlock()[1];

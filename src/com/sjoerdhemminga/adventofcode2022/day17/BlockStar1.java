@@ -2,12 +2,12 @@ package com.sjoerdhemminga.adventofcode2022.day17;
 
 import java.util.List;
 
-final class Block {
+final class BlockStar1 {
     private final char[][] block = {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
     private int bottomRow;
     private int leftCol = 2;
 
-    Block(BlockInitializer initializer, int level) {
+    BlockStar1(final BlockInitializer initializer, final int level) {
         initializer.apply(block);
         bottomRow = level;
     }
