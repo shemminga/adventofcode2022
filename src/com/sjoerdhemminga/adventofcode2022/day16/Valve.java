@@ -1,7 +1,6 @@
 package com.sjoerdhemminga.adventofcode2022.day16;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -20,9 +19,5 @@ record Valve(String label, int flowRate, List<String> connectedValves) {
         final String[] connected = COMMA.split(line.substring(startOfList));
 
         return new Valve(label, flowRate, new ArrayList<>(List.of(connected)));
-    }
-
-    void orderConnections(final List<String> order) {
-        connectedValves.sort(Comparator.comparingInt(order::indexOf));
     }
 }
