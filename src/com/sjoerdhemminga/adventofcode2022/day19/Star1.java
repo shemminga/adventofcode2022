@@ -16,7 +16,7 @@ import static java.util.function.Predicate.not;
 public final class Star1 {
     private final String filename;
 
-    private final Map<State, Integer> stateCache = new HashMap<>();
+    private final Map<State1, Integer> stateCache = new HashMap<>();
 
     public static void main(final String... args) throws IOException, URISyntaxException {
         new Star1("input-test.txt").doFile();
@@ -39,7 +39,7 @@ public final class Star1 {
             final int sum = blueprints.stream()
                     .mapToInt(bp -> {
                         stateCache.clear();
-                        final State startState = new State(bp, 24, 0, 0, 0, 0, 1, 0, 0, 0);
+                        final State1 startState = new State1(bp, 24, 0, 0, 0, 0, 1, 0, 0, 0);
 
                         final int maxGeodeCount = findMaxGeodes(startState);
 
@@ -55,7 +55,7 @@ public final class Star1 {
         System.out.println();
     }
 
-    private int findMaxGeodes(final State state) {
+    private int findMaxGeodes(final State1 state) {
         if (stateCache.containsKey(state)) return stateCache.get(state);
 
         final int count = findMaxGeodesWithoutCache(state);
@@ -63,7 +63,7 @@ public final class Star1 {
         return count;
     }
 
-    private int findMaxGeodesWithoutCache(final State state) {
+    private int findMaxGeodesWithoutCache(final State1 state) {
         //if (state.timeLeft() > 20)
         //    System.out.println("-".repeat(25 - state.timeLeft()) + " time left: " + state.timeLeft());
 
