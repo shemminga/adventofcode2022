@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 import static java.lang.Math.max;
 import static java.util.function.Predicate.not;
 
+/** Run with -Xms32G -Xmx32G */
 public final class Star2 {
     private final String filename;
 
